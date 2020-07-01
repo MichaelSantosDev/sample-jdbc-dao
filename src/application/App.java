@@ -37,6 +37,31 @@ public class App {
 			System.out.println(s);
 		}
 		
+		System.out.println();
+		
+		System.out.println("Seller Insertion");
+		System.out.println("---------------");
+		Seller insertSeller = new Seller(null, "Taise", "tata@gmail.com", new Date(), 10000.00, dep);
+		sellerDao.insert(insertSeller);
+		System.out.println("Inserted seller id " + insertSeller.getId());
+		
+		System.out.println();
+		
+		System.out.println("Seller Update");
+		System.out.println("-------------");
+		seller = sellerDao.findById(1);
+		seller.setName("Marokas");
+		sellerDao.update(seller);
+		System.out.println(seller);
+		
+		
+		System.out.println();
+		
+		System.out.println("Seller Update");
+		System.out.println("-------------");
+		sellerDao.deleteById(insertSeller.getId());
+		
+		
 
 	}
 
